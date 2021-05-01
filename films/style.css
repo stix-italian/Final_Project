@@ -4,7 +4,13 @@
 }
 
 body {
-    background-color: rgb(59, 57, 57);}
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fcc93c;
+    background-image: url("../images/space.jpg");
+    background-size:100%;
+    /* background-color: rgb(59, 57, 57); */
+}
 
 #filmList {
     display: flex;
@@ -13,10 +19,11 @@ body {
 
 figure {
     margin: 1em;
+    border: solid 1px grey;
 }
 
 figcaption {
     text-align: center;
-    background-color: black;
+    background-color: rgb(59, 57, 57);
     color: #fff;
 }

@@ -10,7 +10,7 @@ body{
   flex-wrap: wrap;
   background-color: #fcc93c;
   background-image: url("images/cardback.png");
-  background-size:cover;
+  background-size:100%;
   margin: 30px;
 }
 
