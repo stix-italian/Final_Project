@@ -6,11 +6,18 @@
 
 
 body{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fcc93c;
+  background-image: url("images/cardback.png");
+  background-size:cover;
   margin: 30px;
 }
 
 header {
   text-align: center;
+  margin-right: 35%;
+  margin-left: 35%;
   padding: 10px;
   background-color: rgb(127, 182, 255);
 }
@@ -24,7 +31,6 @@ header {
 .scene {
     width: 200px;
     height: 260px;
-    border: 1px solid #ccc;
     margin: 10px;
     perspective: 600px;
 }
