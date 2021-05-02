@@ -13,7 +13,8 @@
 }
 
 body{
-    background-color: rgb(59, 57, 57);
+    background: linear-gradient(to right, rgb(85, 88, 221),rgb(59, 57, 57));
+    background: linear-gradient (blue,rgb(59, 57, 57));
 }
 
 figure > img {
