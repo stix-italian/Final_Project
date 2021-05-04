@@ -18,9 +18,9 @@ document.body.insertBefore(mainHeader, mainElement)
 // maleButton.addEventListener('click', () => populateDOM(maleCharacters))
 
 
-const head = document.createElement('p')
-head.textContent = "Select which Characters to Display"
-mainHeader.appendChild(head)
+// const head = document.createElement('p')
+// head.textContent = "Display"
+// mainHeader.appendChild(head)
 
 const planetSelect = document.createElement('select')
 planetSelect.id = "planSelect"
@@ -54,7 +54,7 @@ planetSelect.appendChild(femaleButton)
 
 const othersButton = document.createElement('option')
 othersButton.textContent = 'Other Characters'
-othersButton.val = 'other'
+othersButton.value = 'other'
 planetSelect.appendChild(othersButton)
 // othersButton.addEventListener('click', () => populateDOM(otherCharacters))
 
@@ -98,7 +98,6 @@ function populateDOM(characters) {
 }
 
 function planetFilter(){
-    console.log('It calls to me')
     var val = document.getElementById('planSelect').value
     console.log('val = '+val)
     if(val === 'all'){
@@ -114,18 +113,17 @@ function planetFilter(){
         populateDOM(femaleCharacters)
     }
     if(val === 'other'){
-        const otherCharacters = people.filter(person => person.gender === 'n/a') /*{
+        const otherCharacters = people.filter(person => {
             if (person.gender === 'n/a' ||
                 person.gender === 'hermaphrodite') {
                 return person
             }
         const allCharacters = people.filter(person => person.gender === 'n/a')
-        })*/
+        })
         populateDOM(otherCharacters)
     }
 
     if(val === 'tat'){
-        console.log("It's Working!!")
         const TatCharacters = people.filter(person => person.homeworld === 'https://swapi.co/api/planets/1/')
         populateDOM(TatCharacters)
     }
