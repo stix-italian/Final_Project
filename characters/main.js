@@ -59,16 +59,40 @@ planetSelect.appendChild(othersButton)
 // othersButton.addEventListener('click', () => populateDOM(otherCharacters))
 
 
-const tatButton = document.createElement('option')
-tatButton.textContent = 'Characters From Tatooine'
-tatButton.value = 'tat'
-planetSelect.appendChild(tatButton)
-// tatButton.addEventListener('click', () => populateDOM(TatCharacters))
+const ep1Button = document.createElement('option')
+ep1Button.textContent = 'Episode 1 Characters'
+ep1Button.value = 'ep1'
+planetSelect.appendChild(ep1Button)
 
+const ep2Button = document.createElement('option')
+ep2Button.textContent = 'Episode 2 Characters'
+ep2Button.value = 'ep2'
+planetSelect.appendChild(ep2Button)
 
+const ep3Button = document.createElement('option')
+ep3Button.textContent = 'Episode 3 Characters'
+ep3Button.value = 'ep3'
+planetSelect.appendChild(ep3Button)
 
+const ep4Button = document.createElement('option')
+ep4Button.textContent = 'Episode 4 Characters'
+ep4Button.value = 'ep4'
+planetSelect.appendChild(ep4Button)
 
+const ep5Button = document.createElement('option')
+ep5Button.textContent = 'Episode 5 Characters'
+ep5Button.value = 'ep5'
+planetSelect.appendChild(ep5Button)
 
+const ep6Button = document.createElement('option')
+ep6Button.textContent = 'Episode 6 Characters'
+ep6Button.value = 'ep6'
+planetSelect.appendChild(ep6Button)
+
+const ep7Button = document.createElement('option')
+ep7Button.textContent = 'Episode 7 Characters'
+ep7Button.value = 'ep7'
+planetSelect.appendChild(ep7Button)
 
 
 const allCharacters = people.filter(person => person.gender !== '')
@@ -123,10 +147,75 @@ function planetFilter(){
         populateDOM(otherCharacters)
     }
 
-    if(val === 'tat'){
-        const TatCharacters = people.filter(person => person.homeworld === 'https://swapi.co/api/planets/1/')
-        populateDOM(TatCharacters)
+    if(val === 'ep1'){
+        console.log("whaaaaa")
+        const ep1Characters = people.filter(person => {
+            for(let i = 1; i < person.films.length; i++){
+                console.log(person.name +'      film = '+ `https://swapi.co/api/films/${i}/`)
+                if (person.films[i] === `https://swapi.co/api/films/4/`) {return person}
+            }
+        })
+        populateDOM(ep1Characters)
     }
+
+    if(val === 'ep2'){
+        console.log("whaaaaa")
+        const ep2Characters = people.filter(person => {
+            for(let i = 1; i < person.films.length+1; i++){
+                console.log(person.name +'      film = '+ `https://swapi.co/api/films/${i}/`)
+                if (person.films[i] === `https://swapi.co/api/films/5/`) {return person}
+            }
+        })
+        populateDOM(ep2Characters)
+    }
+
+    if(val === 'ep3'){
+        const ep3Characters = people.filter(person => {
+            for(let i = 1; i < person.films.length+1; i++){
+                if (person.films[i] === `https://swapi.co/api/films/6/`) {return person}
+            }
+        })
+        populateDOM(ep3Characters)
+    }
+
+    if(val === 'ep4'){
+        const ep4Characters = people.filter(person => {
+            for(let i = 1; i < person.films.length+1; i++){
+                if (person.films[i] === `https://swapi.co/api/films/1/`) {return person}
+            }
+        })
+        populateDOM(ep4Characters)
+    }
+
+    if(val === 'ep5'){
+        const ep5Characters = people.filter(person => {
+            for(let i = 1; i < person.films.length+1; i++){
+                if (person.films[i] === `https://swapi.co/api/films/2/`) {return person}
+            }
+        })
+        populateDOM(ep5Characters)
+    }
+
+    if(val === 'ep6'){
+        const ep6Characters = people.filter(person => {
+            for(let i = 1; i < person.films.length+1; i++){
+                if (person.films[i] === `https://swapi.co/api/films/3/`) {return person}
+            }
+        })
+        populateDOM(ep6Characters)
+    }
+
+    if(val === 'ep7'){
+        const ep7Characters = people.filter(person => {
+            for(let i = 1; i < person.films.length+1; i++){
+                if (person.films[i] === `https://swapi.co/api/films/7/`) {return person}
+            }
+        })
+        populateDOM(ep7Characters)
+    }
+    //     const ep1Characters = people.filter(person => person.homeworld === 'https://swapi.co/api/planets/1/')
+    //     populateDOM(TatCharacters)
+    // }
 }
 
 populateDOM(allCharacters)
