@@ -68,7 +68,7 @@ async function getAPIData(url) {
 }
 
 function loadPage() {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25&offset=`+count).then(
+    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=50&offset=`+count).then(
         async (data) => {
             for (const singlePokemon of data.results) {
                 await getAPIData(singlePokemon.url).then(
@@ -77,7 +77,7 @@ function loadPage() {
             }
         }
     )
-    count += 25
+    count += 50
 }
 
 function populatePokeCard(singlePokemon) {
