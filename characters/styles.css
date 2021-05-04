@@ -13,11 +13,19 @@ header {
     display: flex;
     margin: 0px, 1rem;
     border: 1px solid grey;
-    background: linear-gradient(to right, rgb(85, 88, 221),rgb(59, 57, 57));
+    background: linear-gradient(rgb(85, 88, 221),rgb(141, 135, 135));
     margin-bottom: 20px;
 }
 
-header button{
+header p {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+header select{
+    padding-left: 5px;
+    border-left: 1px solid gold;
     background: linear-gradient(rgb(85, 88, 221),rgb(141, 135, 135));
     font-size: larger;
 }
