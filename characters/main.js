@@ -7,21 +7,7 @@ const mainHeader = document.createElement('header')
 
 document.body.insertBefore(mainHeader, mainElement)
 
-// const allButton = document.createElement('button')
-// allButton.textContent='All Characters'
-// mainHeader.appendChild(allButton)
-// allButton.addEventListener('click', ()=> populateDOM(allCharacters))
-
-// const maleButton = document.createElement('button')
-// maleButton.textContent = 'Male Characters'
-// mainHeader.appendChild(maleButton)
-// maleButton.addEventListener('click', () => populateDOM(maleCharacters))
-
-
-// const head = document.createElement('p')
-// head.textContent = "Display"
-// mainHeader.appendChild(head)
-
+// Create Select button
 const planetSelect = document.createElement('select')
 planetSelect.id = "planSelect"
 planetSelect.textContent = 'Characters From'
@@ -29,17 +15,11 @@ mainHeader.appendChild(planetSelect)
 planetSelect.addEventListener("change",planetFilter)
 
 
-// const discButton = document.createElement('option')
-// discButton.textContent = 'Characters From..'
-// discButton.value = ''
-// planetSelect.appendChild(discButton)
-
+// Select dropdown options
 const allButton = document.createElement('option')
 allButton.textContent='All Characters'
 allButton.value = 'all'
 planetSelect.appendChild(allButton)
-// allButton.addEventListener('click', ()=> populateDOM(allCharacters))
-
 
 const malButton = document.createElement('option')
 malButton.textContent = 'Male Characters'
@@ -50,14 +30,11 @@ const femaleButton = document.createElement('option')
 femaleButton.textContent = 'Female Characters'
 femaleButton.value = 'female'
 planetSelect.appendChild(femaleButton)
-// femaleButton.addEventListener('click', () => populateDOM(femaleCharacters))
 
 const othersButton = document.createElement('option')
 othersButton.textContent = 'Other Characters'
 othersButton.value = 'other'
 planetSelect.appendChild(othersButton)
-// othersButton.addEventListener('click', () => populateDOM(otherCharacters))
-
 
 const ep1Button = document.createElement('option')
 ep1Button.textContent = 'Episode 1 Characters'
@@ -95,16 +72,13 @@ ep7Button.value = 'ep7'
 planetSelect.appendChild(ep7Button)
 
 
+
 const allCharacters = people.filter(person => person.gender !== '')
 
 
-// const TatCharacters = people.filter(person => {//person.homeworld === "https://swapi.co/api/planets/1/")
-//     for(i = 0; i < person.films.length; i++){
-//         if (person.films[i] === 1) return person
-//     }
-//     const allCharacters = people.filter(person => person.gender === 'n/a')
-// })
 
+
+// functions
 function populateDOM(characters) {
     removeChildren(mainElement)
     characters.forEach((person) => {
@@ -147,12 +121,13 @@ function planetFilter(){
         populateDOM(otherCharacters)
     }
 
+
+    // Episode Options
     if(val === 'ep1'){
         console.log("whaaaaa")
         const ep1Characters = people.filter(person => {
-            for(let i = 1; i < person.films.length; i++){
-                console.log(person.name +'      film = '+ `https://swapi.co/api/films/${i}/`)
-                if (person.films[i] === `https://swapi.co/api/films/4/`) {return person}
+            if (person.films.includes (`https://swapi.co/api/films/4/`)){
+                return person
             }
         })
         populateDOM(ep1Characters)
@@ -161,9 +136,8 @@ function planetFilter(){
     if(val === 'ep2'){
         console.log("whaaaaa")
         const ep2Characters = people.filter(person => {
-            for(let i = 1; i < person.films.length+1; i++){
-                console.log(person.name +'      film = '+ `https://swapi.co/api/films/${i}/`)
-                if (person.films[i] === `https://swapi.co/api/films/5/`) {return person}
+            if (person.films.includes (`https://swapi.co/api/films/5/`)){
+                return person
             }
         })
         populateDOM(ep2Characters)
@@ -171,8 +145,8 @@ function planetFilter(){
 
     if(val === 'ep3'){
         const ep3Characters = people.filter(person => {
-            for(let i = 1; i < person.films.length+1; i++){
-                if (person.films[i] === `https://swapi.co/api/films/6/`) {return person}
+            if (person.films.includes (`https://swapi.co/api/films/6/`)){
+                return person
             }
         })
         populateDOM(ep3Characters)
@@ -180,8 +154,8 @@ function planetFilter(){
 
     if(val === 'ep4'){
         const ep4Characters = people.filter(person => {
-            for(let i = 1; i < person.films.length+1; i++){
-                if (person.films[i] === `https://swapi.co/api/films/1/`) {return person}
+            if (person.films.includes (`https://swapi.co/api/films/1/`)){
+                return person
             }
         })
         populateDOM(ep4Characters)
@@ -189,8 +163,8 @@ function planetFilter(){
 
     if(val === 'ep5'){
         const ep5Characters = people.filter(person => {
-            for(let i = 1; i < person.films.length+1; i++){
-                if (person.films[i] === `https://swapi.co/api/films/2/`) {return person}
+            if (person.films.includes (`https://swapi.co/api/films/2/`)){
+                return person
             }
         })
         populateDOM(ep5Characters)
@@ -198,8 +172,8 @@ function planetFilter(){
 
     if(val === 'ep6'){
         const ep6Characters = people.filter(person => {
-            for(let i = 1; i < person.films.length+1; i++){
-                if (person.films[i] === `https://swapi.co/api/films/3/`) {return person}
+            if (person.films.includes (`https://swapi.co/api/films/3/`)){
+                return person
             }
         })
         populateDOM(ep6Characters)
@@ -207,15 +181,12 @@ function planetFilter(){
 
     if(val === 'ep7'){
         const ep7Characters = people.filter(person => {
-            for(let i = 1; i < person.films.length+1; i++){
-                if (person.films[i] === `https://swapi.co/api/films/7/`) {return person}
+            if (person.films.includes (`https://swapi.co/api/films/7/`)){
+                return person
             }
         })
         populateDOM(ep7Characters)
     }
-    //     const ep1Characters = people.filter(person => person.homeworld === 'https://swapi.co/api/planets/1/')
-    //     populateDOM(TatCharacters)
-    // }
 }
 
 populateDOM(allCharacters)
