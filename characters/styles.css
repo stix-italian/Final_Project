@@ -2,21 +2,46 @@
     margin: 2;
     box-sizing: border-box;
     justify-content: center;
-    
 }
 
 #main {
     display: flex;
     flex-wrap: wrap;
-    
-    
+}
+
+header {
+    display: flex;
+    margin: 0px, 1rem;
+    border: 1px solid grey;
+    background: linear-gradient(to right, rgb(85, 88, 221),rgb(59, 57, 57));
+    margin-bottom: 20px;
+}
+
+header button{
+    background: linear-gradient(rgb(85, 88, 221),rgb(141, 135, 135));
+    font-size: larger;
 }
 
 body{
     background: linear-gradient(to right, rgb(85, 88, 221),rgb(59, 57, 57));
-    background: linear-gradient (blue,rgb(59, 57, 57));
+    margin: 1rem 10rem;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-image: url("../images/space.jpg")
 }
 
 figure > img {
     height: 200px;
+    border: 2px solid white;
+    padding: 5px;
+    background-color: lightblue;
+}
+
+figcaption{
+    display: flex;
+    text-align: center;
+    background-color: lightblue;
+    padding: 3px 0px;
 }

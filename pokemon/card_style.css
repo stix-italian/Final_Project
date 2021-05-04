@@ -11,18 +11,41 @@ body{
   background-color: #fcc93c;
   background-image: url("images/cardback.png");
   background-size:100%;
-  margin: 30px;
+  margin: 10px;
 }
 
 header {
+  display: block;
+  position: fixed;
+  width: 80%;
+  top: 20px;
+  left: 10%;
+  /* display: block; */
+  z-index: 1000;
+  background: linear-gradient(blue, #fcc93c);
+  justify-content: center;
   text-align: center;
-  margin-right: 35%;
-  margin-left: 35%;
-  padding: 10px;
-  background-color: rgb(127, 182, 255);
+  margin: auto;
+  margin-bottom: 25px;  
+  color:  #fcc93c;
+  font-size: larger;
+  
+}
+.keepOpen{
+  clear:both;
+}
+
+header button {
+  left: 10%;
+  font-size: medium;
+  background: linear-gradient(#fcc93c,rgb(141, 135, 135));
+  border-radius: 7px;
+  padding: 4px;
+  margin: 5px;
 }
 
 .pokeGrid {
+    margin-top: 100px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
