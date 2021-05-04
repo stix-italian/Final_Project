@@ -45,25 +45,20 @@ body {
 }
 
 #welcome-section {
-    /* display: flex;
-    flex-direction: column; */
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: var(--dark-blue);
     color: #fff;
     width: 100%;
-    height: 50vh;
+    height: 60vh;
+    padding-top: 40px;
 }
 
-.ammonPic{
-  background-color: lightblue;
-  /* display: block */
-  padding-top: 70px;
-  justify-content: center;
-  /* width: 10%; */
-  margin-left: 50px;
-  align-items: left;
-}
+ .ammonPic{
+  padding-bottom: 10px;  
+ }
 
 #welcome-section h1, p{
   align-items: center;
